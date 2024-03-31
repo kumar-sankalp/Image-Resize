@@ -16,31 +16,24 @@ This project focuses on building an automated system for image processing and ma
 ### Creating Source and Designation s3 Buckets :
 
 1. Navigate to the S3 Console.
-2. Follow the Outlined Steps below.
-3. Create the destination bucket using the same steps and name it with a unique name.
-4. As you can see above , I created two buckets one is Source bucket and another one is Destination bucket.
+2. Create the destination bucket using the same steps and name it with a unique name.
+3. two buckets one is Source bucket and another one is Destination bucket.
 
 ### Step 2 :
 ### Creating the SNS Notification :
 
 1. Navigate to the SNS console.
-2. Follow the Outlined Steps below.
-3. Scroll down and Click "Create subscription" 
-4. After this , you will receive some mail for Subscription Confirmation and you have to confirm that.<br>
-5. You can use any other protocols also like SQS, HTTP, SMS etc .
+2. create a topic and email as subscription , put your email 
+
 
 
 ### Step 3 :
 ### Creating the Lambda :
-
+ Add below as layer to save in compute and execution optimization.
 ```
 arn:aws:lambda:ap-south-1:770693421928:layer:Klayers-p39-pillow:1
 ```
-
-13. After done all the actions above , now we can test our code.
-
-
-14. It will show some results like below , It runs successfully but return some error because we still not upload the images in S3 yet.
+Make sure to give lambda execution role enough permission to access S3 and publish to SNS topic.
 
 
 ### Step 4 :
